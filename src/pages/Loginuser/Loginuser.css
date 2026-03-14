@@ -1,0 +1,118 @@
+.login-page {
+    height: 81.2vh;
+    background-color: #DBD4FF;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.login-nav {
+    padding: 20px 50px;
+    background: transparent;
+}
+
+.login-nav .logo {
+    height: 50px;
+}
+
+.login-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-header {
+    width: 100%; /* Matches box width */
+    max-width: 600px;
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #1a1a1a;
+}
+
+.login-box {
+    background: white;
+    width: 100%;
+    max-width: 600px; /* Must match the header's max-width */
+    padding: 70px 60px; /* Increased padding (Top/Bottom, Left/Right) */
+    border-radius: 8px; /* Slightly rounder corners look better when larger */
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.input-group input {
+    padding: 12px 15px;
+    border: 1.5px solid #999;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    width: 100%;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    color: #666;
+}
+
+.forgot-link {
+    font-size: 0.9rem;
+    color: #00A3FF;
+    text-decoration: underline;
+    margin-top: 5px;
+}
+
+.login-btn {
+    background-color: #C2E3FF; /* The light blue button color */
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: #333;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #a8d5f9;
+}
+
+.register-text {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.register-text a {
+    color: #00A3FF;
+    text-decoration: underline;
+}

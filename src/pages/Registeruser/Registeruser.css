@@ -1,0 +1,146 @@
+.register-page {
+  min-height: 100vh;
+  background-color: #E0D7FF; /* Light purple background */
+  display: flex;
+  flex-direction: column;
+}
+
+.register-nav .logo {
+  height: 45px;
+}
+
+.register-nav .nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.register-nav .nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.signin-btn {
+  background-color: #D6CFFF;
+  padding: 8px 20px;
+  border-radius: 8px;
+  color: white !important;
+}
+
+.register-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.register-header {
+  width: 100%;
+  max-width: 550px;
+  margin-bottom: 20px;
+}
+
+.register-header h2 {
+  font-size: 1.4rem;
+  color: #1a1a1a;
+  text-align: left;
+}
+
+.register-box {
+  background: white;
+  width: 100%;
+  max-width: 550px;
+  padding: 40px 60px;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input-group label {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.input-group input {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 90px;
+  font-size: 1rem;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  color: #666;
+}
+
+.terms-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.85rem;
+}
+
+.terms-group a {
+  color: #00A3FF;
+  text-decoration: none;
+}
+
+.register-btn {
+  background-color: #C2E3FF; /* Light blue button */
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.register-footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.register-footer-links a {
+  font-size: 0.9rem;
+  color: #00A3FF;
+  text-decoration: none;
+}
+
+.footer-bar {
+  background-color: #9B79FF;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-size: 0.85rem;
+}

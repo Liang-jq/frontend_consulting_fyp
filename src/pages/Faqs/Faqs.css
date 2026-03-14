@@ -1,0 +1,55 @@
+.faq-section {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: sans-serif;
+}
+
+.faq-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.faq-item {
+  background-color: #9B8CFF; /* The purple from your UI */
+  margin-bottom: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question-bar {
+  width: 100%;
+  padding: 18px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.plus-icon {
+  font-size: 1.8rem;
+  transition: transform 0.3s ease;
+  line-height: 1;
+}
+
+/* Rotates the + to look like an X when open */
+.plus-icon.rotate {
+  transform: rotate(45deg);
+}
+
+.faq-answer-content {
+  padding: 0 25px 18px 25px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1); /* Slight highlight */
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}

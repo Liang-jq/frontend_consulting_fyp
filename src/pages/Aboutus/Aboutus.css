@@ -1,0 +1,11 @@
+.aboutus{
+    background-color: #9D5fd8;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.aboutus h2{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}

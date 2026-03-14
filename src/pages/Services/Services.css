@@ -1,0 +1,37 @@
+.service{
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.service-list
+{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 30px;
+}
+
+.service-individual, .service-group {
+    background-color: #ffffff; /* The white background */
+    padding: 30px 20px;       /* Spacing inside the white box */
+    border-radius: 30px;      /* Rounded corners for the card */
+    width: 300px;             /* Fixed width to match the UI */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-list img{
+    width: 200px;
+    height: 120px;
+    background: #eee;
+    border-radius: 100px; /* Oval shape as seen in UI */
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.service-list p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+}

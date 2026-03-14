@@ -1,0 +1,138 @@
+.appointment-page {
+  background-color: #E0D7FF;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.appointment-container {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.appointment-card {
+  background: #fff0f9;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.appointment-header {
+  background: #b483bc;
+  padding: 40px;
+  text-align: center;
+  color: white;
+}
+
+.appointment-form {
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.req { color: red; }
+
+.input-group, .input-group-ratio label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="tel"],
+.input-group input[type="date"],
+.input-group select {
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 25px; /* Pill shape */
+  font-size: 1rem;
+  outline: none;
+}
+
+.input-group select {
+  appearance: none;
+  padding-right: 40px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center; /* Positions arrow inside the pill */
+  background-size: 16px;
+}
+
+.input-group input[type="date"] {
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.input-group-ratio{
+  display: flex;
+}
+
+.radio-row {
+  display: flex;
+  gap: 20px;
+  padding-left: 50px;
+}
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.radio-item input[type="radio"] {
+  accent-color: #b483bc;
+}
+
+.issue-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.inline-input {
+  border: none !important;
+  border-bottom: 1px solid #ccc !important;
+  border-radius: 0;
+  width: 100px;
+  padding: 2px;
+  background: transparent;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.note {
+  font-size: 0.85rem;
+  color: #888;
+  font-style: italic;
+}
+
+.submit-appointment-btn {
+  background-color: #C2E3FF;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 10px;
+  cursor: pointer;
+}

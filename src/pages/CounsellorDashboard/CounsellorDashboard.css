@@ -1,0 +1,94 @@
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-cards {
+  display: flex;
+  gap: 20px;
+  background-color: #a0f0ed; /* Teal background for the cards area */
+  padding: 40px;
+  flex-direction: column;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.summary-cards h2, p{
+  display: grid;
+}
+
+.summary-header-text h2 {
+    margin: 0;
+    color: #333;
+}
+
+.summary-header-text p {
+  margin: 5px 0 0 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* The container holding just the 3 cards */
+.cards-row {
+  display: flex;
+  flex-direction: row; /* Keeps cards side-by-side */
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.card {
+  flex: 1;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.card.blue { background-color: #bde4f4; }
+.card.pink { background-color: #f9c5c5; }
+.card.purple { background-color: #f2a2e4; }
+
+.card.pink img, .card.blue img, .card.purple img{
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 180px;
+}
+
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 20px 0;
+}
+
+.dashboard-footer {
+  background-color: #8e44ad; /* Purple footer from image */
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: auto;
+}
+
+.dashboard-layout {
+    display: flex;
+    width: 100%;
+    min-height: 100vh; /* Ensures it covers the full height */
+    margin: 0;
+    padding: 0;
+}
+
+.main-content {
+    flex: 1; /* This is the "magic" line - it pushes the content to fill the screen */
+    background-color: white; /* Or whatever color your main area should be */
+    display: flex;
+    flex-direction: column;
+}

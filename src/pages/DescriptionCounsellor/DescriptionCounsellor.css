@@ -1,0 +1,108 @@
+.page-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 2rem 10%;
+}
+
+.page-container img{
+  width: 20px;
+  height: 20px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.profile-hero {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  position: relative;
+  margin-top: 40px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.icon img{
+  margin-right: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.avatar-placeholder {
+  width: 180px;
+  height: 180px;
+  background-color: #eee;
+  position: absolute;
+  top: -40px;
+  left: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2;
+}
+
+.profile-info {
+  position: relative;
+  color: #333;
+}
+
+.profile-info h2{
+  margin-left: 250px;
+  margin-bottom: 20px;
+}
+
+.colour{
+  background-color:#BE91BE ;
+  padding: 20px 40px 20px 220px;
+  width: 100%;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-item {
+  margin: 10px 20px;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.skeleton-line {
+  height: 12px;
+  width: 400px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 10px;
+}
+
+/* About Section */
+.about-section {
+  text-align: center;
+  margin: 40px 0;
+  line-height: 1.6;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  margin-top: 50px;
+}
+
+.action-btn {
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: none;
+  background: white;
+  color: var(--primary-purple);
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+}

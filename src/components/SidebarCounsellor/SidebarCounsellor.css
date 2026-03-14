@@ -1,0 +1,29 @@
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #a0f0ed; /* The light teal color from your image */
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 15px 25px;
+}
+
+/* This is the darker teal for the active page */
+.sidebar-item.active {
+  background-color: #5bc0be; 
+  color: white;
+  font-weight: bold;
+}
+
+.sidebar-item:hover {
+  background-color: #d1f7f6; /* Subtle highlight on hover */
+}

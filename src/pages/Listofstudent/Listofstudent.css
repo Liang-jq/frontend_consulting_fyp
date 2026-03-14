@@ -1,0 +1,26 @@
+.page{
+  display: flex;
+}
+
+.table-page{
+  flex: 1;
+  padding: 20px;
+  background-color:white;
+}
+
+.btn-approve{
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.btn-delete{
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
