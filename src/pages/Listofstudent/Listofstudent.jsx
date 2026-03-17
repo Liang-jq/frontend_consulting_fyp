@@ -7,19 +7,17 @@ import axios from 'axios';
 const Listofstudent = () => { 
   const [rows,setRows] = useState([]);
 
-  useEffect(()=>{
-  axios.get("http://localhost/backend_consult/api/PendingCounsellor.php")
-  .then(res=>{
-    setRows(res.data);
-  })
-  },[])
+  useEffect(() => {
+    axios.get("http://localhost/backend_consult/api/PendingCounsellor.php")
+      .then(res => setRows(res.data))
+      .catch(err => console.log(err));
+  }, []);
+
   const approveUser = (id) => {
-  axios.post("http://localhost/backend_consult/api/approveCounsellor.php",{
-    id:id
-  }).then(()=>{
-    setRows(rows.filter(row=>row.id !== id));
-  })
-}
+    axios.post("http://localhost/backend_consult/api/approveCounsellor.php", { id })
+      .then(() => setRows(prev => prev.filter(row => row.id !== id)))
+      .catch(err => console.log(err));
+  }
 
 const columns = [
     { field: "name", headerName: "Name", width: 100 },

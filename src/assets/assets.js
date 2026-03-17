@@ -14,6 +14,7 @@ import session_icon from './session.png'
 import back_icon from './backicon.png'
 import world_icon from './world.png'
 import award_icon from './award.png'
+import edit_icon from './Edit.png'
 
 
 export const assets={
@@ -32,5 +33,6 @@ export const assets={
     session_icon,
     back_icon,
     world_icon,
-    award_icon
+    award_icon,
+    edit_icon
 }

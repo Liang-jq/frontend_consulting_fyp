@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import './Clientform.css'
+import { useParams } from 'react-router-dom';
 
 const Clientform = () => {
+  const { id } = useParams();
 
   const [formData, setFormData] = useState({
+    counsellor_id: id,
     name: '',
     email: '',
     phone: '',
@@ -16,7 +19,7 @@ const Clientform = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-  };
+  }
 
   return (
     <div className="appointment-page">

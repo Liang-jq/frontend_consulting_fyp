@@ -43,7 +43,7 @@ const DescriptionLecturer = () => {
                 <p>{lecturer?.description}</p>
             </section>
             <div className="button-group">
-                <Link to="./clientform"><button className="action-btn">Book a session by form</button></Link>
+                <Link to={`/clientform/${counsellor.id}`}><button className="action-btn">Book a session by form</button></Link>
                 <button className="action-btn">Book a session by AI</button>
             </div>
         </div>

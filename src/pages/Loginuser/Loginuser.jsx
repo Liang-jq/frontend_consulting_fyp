@@ -29,6 +29,7 @@ const Loginuser = () => {
 
             if(response.data.success){
                 localStorage.setItem("user", JSON.stringify({
+                    id: response.data.user_id,
                     name: response.data.name,
                     role: response.data.role
                 }))

@@ -16,6 +16,10 @@ import Listofstudent from './pages/Listofstudent/Listofstudent'
 import AdminRegister from './pages/AdminRegister/AdminRegister'
 import DescriptionCounsellor from './pages/DescriptionCounsellor/DescriptionCounsellor'
 import DescriptionLecturer from './pages/DescriptionLecturer/DescriptionLecturer'
+import Profile from './pages/Profile/Profile'
+import EditProfileCounsellor from './pages/EditProfileCounsellor/EditProfileCounsellor'
+import CounsellorApp from './pages/CounsellorApp/CounsellorApp'
+import AdminApp from './pages/AdminApp/AdminApp'
 
 
 const App = () => {
@@ -40,6 +44,10 @@ const App = () => {
           <Route path='/adminregister' element={<AdminRegister/>}/>
           <Route path='/descriptioncounsellor/:id' element={<DescriptionCounsellor/>}/>
           <Route path='/descriptionlecturer/:id' element={<DescriptionLecturer/>}/>
+          <Route path='/profile' element={<Profile/>}/>
+          <Route path='/editcounsellor' element={<EditProfileCounsellor/>}/>
+          <Route path='/counsellorapp' element={<CounsellorApp/>}/>
+          <Route path='/adminapp' element={<AdminApp/>}/>
         </Routes>
       </div>
       <Footer/>

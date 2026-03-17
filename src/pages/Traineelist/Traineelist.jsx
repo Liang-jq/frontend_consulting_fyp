@@ -12,16 +12,18 @@ const Traineelist = () => {
     useEffect(()=>{
         axios.get("http://localhost/backend_consult/api/traineelist.php")
         .then(res=>{
-            setCounsellor(res.data);
+            console.log(res.data); 
+            setCounsellor(res.data); 
         })
         .catch(err=>{
             console.log(err);
+            setCounsellor([]);
         })
     },[])
 
-    const filteredCounsellor = counsellor.filter((doc) =>
-        doc.name.toLowerCase().includes(search.toLowerCase())
-    );
+    const filteredCounsellor = Array.isArray(counsellor)
+  ? counsellor.filter((doc) => doc.name.toLowerCase().includes(search.toLowerCase()))
+  : [];
     
     return (
         <div className="container">
