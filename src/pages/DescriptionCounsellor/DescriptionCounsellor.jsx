@@ -6,7 +6,7 @@ import { Link, useParams } from 'react-router-dom';
 
 const DescriptionCounsellor = () => {
   const { id } = useParams();
-  const [counsellor, setCounsellor] = useState(null);
+  const [counsellor, setCounsellor] = useState();
 
   useEffect(() => {
     axios.get(`http://localhost/backend_consult/api/counsellorDetails.php?id=${id}`)
@@ -15,13 +15,17 @@ const DescriptionCounsellor = () => {
     })
     .catch(err => console.log(err));
   }, [id]);
+
+  if (!counsellor) {
+  return <p>Loading...</p>;
+}
   return (
     <div className="page-container">
       <Link to="/traineelist"><img src={assets.back_icon} alt="" /></Link>
       {/* Profile Card Section */}
       <section className="profile-hero">
         <div className="profile-info">
-          <h2>{counsellor?.name}</h2>
+          <h2>{counsellor.name}</h2>
           <div className="avatar-placeholder">
             {/* Image would go here */}
           </div>
@@ -38,10 +42,10 @@ const DescriptionCounsellor = () => {
 
       <section className="about-section">
         <h3>About me</h3>
-        <p>{counsellor?.description}</p>
+        <p>{counsellor.description}</p>
       </section>
       <div className="button-group">
-        <Link to="/clientform"><button className="action-btn">Book a session by form</button></Link>
+        <Link to={`/clientform/${counsellor.id}`}><button className="action-btn">Book a session by form</button></Link>
         <button className="action-btn">Book a session by AI</button>
       </div>
     </div>

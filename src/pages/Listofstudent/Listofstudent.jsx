@@ -34,8 +34,7 @@ const columns = [
       width: 170,
       renderCell: (params) => (
         <>
-          <button 
-            className="btn-approve" 
+          <button className="btn-approve" 
             onClick={() => approveUser(params.row.id)}
           >
             Approve

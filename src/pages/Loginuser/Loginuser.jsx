@@ -27,27 +27,25 @@ const Loginuser = () => {
 
             console.log(response.data)
 
-            if(response.data.success){
-                localStorage.setItem("user", JSON.stringify({
-                    id: response.data.user_id,
-                    name: response.data.name,
-                    role: response.data.role
-                }))
+            if (response.data.success) {
+            const user = {
+                id: response.data.user_id,
+                counsellor_id: response.data.counsellor_id||null,
+                name: response.data.name,
+                role: response.data.role
+            };
 
-                if(response.data.role==="user"){
-                    window.location.href="/"
-                }
-                if(response.data.role==="counsellor"){
-                    window.location.href="/counsellordashboard"
-                }
-                if(response.data.role==="admin"){
-                    window.location.href="/admindashboard"
-                }
-                  
+            // Store in localStorage
+            localStorage.setItem("user", JSON.stringify(user));
 
-            }else{
-                alert(response.data.error)
-            }
+            // Redirect by role
+            if (user.role === "user") window.location.href = "/";
+            if (user.role === "counsellor") window.location.href = "/counsellordashboard";
+            if (user.role === "admin") window.location.href = "/admindashboard";
+        } else {
+            alert(response.data.error);
+        }
+            
 
         }catch(err){
             console.log(err)
