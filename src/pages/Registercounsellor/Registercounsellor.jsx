@@ -3,6 +3,7 @@ import './Registercounsellor.css'
 import axios from 'axios'
 import { assets } from '../../assets/assets';
 import { Eye, EyeOff } from 'lucide-react';
+import Navbar from '../../components/Navbar/Navbar';
 
 const Registercounsellor = () => {
     const [showPassword,setShowPassword]=useState(false);
@@ -90,6 +91,7 @@ const Registercounsellor = () => {
     
     return (
         <div className='nav-container'>
+            <Navbar/>
             <div className="form-wrapper">
                 <img src={assets.counselling_Register_icon} alt="Counselling" />
 

@@ -36,13 +36,19 @@ const CounsellorApp = () => {
 }, []);
 
     const approveUser = async (id) => {
+        if (!window.confirm("Approve this appointment and add to Google Calendar?")) return;
+
+        const form = new FormData();
+        form.append('appointment_id', id);
+
+        console.log("Sending appointment_id:", id);
         try {
-            const form = new FormData();
-            form.append("id", id);
             const res = await axios.post(
-                "http://localhost/backend_consult/api/approveAppointment.php",
-                form
+            'http://localhost/backend_consult/api/approveAppointment.php',
+            form
             );
+
+            console.log("Full API response:", res.data); // Debug log
 
             if (res.data.success) {
                 toast.success("Appointment approved!");
@@ -59,13 +65,12 @@ const CounsellorApp = () => {
     const deleteAppointment = async (id) => {
         if (!window.confirm("Are you sure you want to delete this appointment?")) return;
         try {
-            const form = new FormData();
-            form.append("id", id);
+            console.log("Attempting to delete appointment:", id);
 
-            const res = await axios.post(
-                "http://localhost/backend_consult/api/deleteAppointment.php",
-                form
+            const res = await axios.get(
+                `http://localhost/backend_consult/api/deleteAppointment.php?id=${id}`,
             );
+            console.log("Delete response:", res.data);
 
             if (res.data.success) {
                 toast.success("Deleted successfully!");

@@ -27,6 +27,7 @@ const Navbar = () => {
       <div className="navbar-links-group">
         <ul className="navbar-menu">
           <Link to="/" onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>Home</Link>
+          <Link to="/userapp" onClick={() => setMenu("userapp")} className={menu === "userapp" ? "active" : ""}>Session</Link>
           
         </ul>
         <div className="navbar-right">
@@ -56,7 +57,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

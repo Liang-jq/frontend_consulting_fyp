@@ -20,8 +20,9 @@ import Profile from "./pages/Profile/Profile"
 import EditProfileCounsellor from "./pages/EditProfileCounsellor/EditProfileCounsellor"
 import CounsellorApp from "./pages/CounsellorApp/CounsellorApp"
 import AdminApp from "./pages/AdminApp/AdminApp"
-
-
+import UserApp from "./pages/userApp/userApp"
+import Chatbot from "./pages/Chatbot/Chatbot"
+import Uploadexcel from "./pages/Uploadexcel/Uploadexcel"
 import { ToastContainer } from "react-toastify"
 
 const App = () => {
@@ -30,7 +31,6 @@ const App = () => {
   return (
     <>
       <div className="app">
-        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/loginuser" element={<Loginuser />} />
@@ -50,7 +50,9 @@ const App = () => {
           <Route path="/editcounsellor" element={<EditProfileCounsellor />} />
           <Route path="/counsellorapp" element={<CounsellorApp />} />
           <Route path="/adminapp" element={<AdminApp />} />
-          <Route path="/userapp" element={<userApp/>}/>
+          <Route path="/userapp" element={<UserApp/>}/>
+          <Route path="/chatbot/:id" element={<Chatbot/>}/>
+          <Route path="/excel" element={<Uploadexcel/>}/>
         </Routes>
         <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover/>
       </div>

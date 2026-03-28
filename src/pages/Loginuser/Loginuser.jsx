@@ -3,6 +3,7 @@ import axios from 'axios'
 import './Loginuser.css'
 import { Eye, EyeOff } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import RegisNavbar from '../../components/RegisNavbar/RegisNavbar';
 
 const Loginuser = () => {
     const navigate=useNavigate()
@@ -25,28 +26,26 @@ const Loginuser = () => {
                 formData
             )
 
-            console.log(response.data)
+            console.log(response.data);
 
             if (response.data.success) {
-            const user = {
-                id: response.data.user_id,
-                counsellor_id: response.data.counsellor_id||null,
-                name: response.data.name,
-                role: response.data.role
-            };
+                const user = {
+                    user_id: response.data.user_id,
+                    counsellor_id: response.data.counsellor_id,
+                    name: response.data.name,
+                    email:response.data.email,
+                    role: response.data.role
+                }
 
-            // Store in localStorage
-            localStorage.setItem("user", JSON.stringify(user));
+                // ✅ SAVE
+                localStorage.setItem("user", JSON.stringify(user));
 
-            // Redirect by role
-            if (user.role === "user") window.location.href = "/";
-            if (user.role === "counsellor") window.location.href = "/counsellordashboard";
-            if (user.role === "admin") window.location.href = "/admindashboard";
-        } else {
-            alert(response.data.error);
-        }
-            
-
+                if (user.role === "user") window.location.href = "/";
+                if (user.role === "counsellor") window.location.href = "/counsellordashboard";
+                if (user.role === "admin") window.location.href = "/admindashboard";
+            } else {
+                alert(response.data.error);
+            }
         }catch(err){
             console.log(err)
             alert("Server error")
@@ -55,6 +54,7 @@ const Loginuser = () => {
 
     return (
         <div className="login-page">
+            <RegisNavbar/>
             <div className="login-container">
                 <h1 className="login-header">Login</h1>
                 <div className="login-box">

@@ -3,6 +3,7 @@ import './Traineelist.css'
 import { assets } from '../../assets/assets';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Navbar from '../../components/Navbar/Navbar';
 
 
 const Traineelist = () => {
@@ -26,6 +27,8 @@ const Traineelist = () => {
   : [];
     
     return (
+        <div>
+        <Navbar />
         <div className="container">
             <div className="search-container">
                 <input type="text" placeholder="Search the Counsellor" className="search-input" value={search} onChange={(e) => setSearch(e.target.value)}/>
@@ -56,6 +59,7 @@ const Traineelist = () => {
                 ))}
             </div>
         </div> 
+    </div>
     )
 }
 

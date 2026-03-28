@@ -1,14 +1,18 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import "./Clientform.css"
 import { useParams } from "react-router-dom"
 import axios from "axios"
 import { toast } from 'react-toastify'
+import Navbar from "../../components/Navbar/Navbar"
 
 const Clientform = () => {
   const { id } = useParams()
+  const storedUser = JSON.parse(localStorage.getItem("user"));
+  const [availableSlots, setAvailableSlots] = useState([]);
 
   const [formData, setFormData] = useState({
     counsellor_id: id,
+    user_id: storedUser?.user_id,
     name: "",
     email: "",
     phone: "",
@@ -17,6 +21,32 @@ const Clientform = () => {
     time: "",
     issue: "",
   })
+
+  
+  useEffect(() => {
+    if (!formData.date) return;
+
+    const fetchSlots = async () => {
+      try {
+        const res = await axios.get(
+          `http://localhost/backend_consult/api/getAvailableSlots.php`,
+          {
+            params: {
+              counsellor_id: id,
+              date: formData.date,
+            },
+          }
+        );
+
+        setAvailableSlots(res.data);
+        console.log("Available:", res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchSlots();
+  }, [id, formData.date]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,6 +69,9 @@ const Clientform = () => {
         "http://localhost/backend_consult/api/bookAppointment.php",
         form, // no Content-Type header needed
       );
+      console.log("API response:", res.data);
+      console.log("Stored user:", storedUser);
+      console.log("User ID:", storedUser?.id);
 
       if (res.data.success){
         toast.success("Appointment booked!");  // Success toast
@@ -52,6 +85,7 @@ const Clientform = () => {
 
   return (
     <div className="appointment-page">
+      <Navbar/>
       <div className="appointment-container">
         <div className="appointment-card">
           <div className="appointment-header">
@@ -61,29 +95,24 @@ const Clientform = () => {
           <form className="appointment-form" onSubmit={handleSubmit}>
             <div className="input-group">
               <label>Name (same as NRIC) <span className="req">*</span></label>
-              <input type="text" name="name" placeholder="As per NRIC" value={formData.name} onChange={handleChange}/>
+              <input type="text" name="name" placeholder="As per NRIC" value={formData.name} onChange={handleChange} required/>
             </div>
 
             <div className="input-group">
               <label>Email<span className="req">*</span></label>
-              <input type="email" name="email" placeholder="Gmail Only" value={formData.email} onChange={handleChange}/>
+              <input type="email" name="email" placeholder="Gmail Only" value={formData.email} onChange={handleChange} required/>
             </div>
 
             <div className="input-group">
               <label>Phone Number<span className="req">*</span></label>
-              <input type="tel"
-                name="phone"
-                placeholder="e.g. 6012-3456789"
-                value={formData.phone}
-                onChange={handleChange}
-              />
+              <input type="tel" name="phone" placeholder="e.g. 6012-3456789" value={formData.phone} onChange={handleChange} required/>
             </div>
 
             <div className="input-group-ratio">
               <label>Group/Individual <span className="req">*</span></label>
               <div className="radio-row">
                 <label className="radio-item">
-                  <input type="radio" name="type" value="Group" checked={formData.type === "Group"} onChange={handleChange}/>
+                  <input type="radio" name="type" value="Group" checked={formData.type === "Group"} onChange={handleChange} required/>
                   <span>Group</span>
                 </label>
                 <label className="radio-item">
@@ -96,14 +125,17 @@ const Clientform = () => {
             <div className="form-row">
               <div className="input-group">
                 <label>Section Date<span className="req">*</span></label>
-                <input type="date" name="date" value={formData.date} onChange={handleChange}/>
+                <input type="date" name="date" value={formData.date} onChange={handleChange} required/>
               </div>
               <div className="input-group">
                 <label>Section Time <span className="req">*</span></label>
-                <select name="time" className="input-group-time" value={formData.time} onChange={handleChange}>
+                <select name="time" className="input-group-time" value={formData.time} onChange={handleChange} required>
                   <option value="">Select Time</option>
-                  <option value="09:00">09:00 AM</option>
-                  <option value="14:00">02:00 PM</option>
+                  {availableSlots.map((slot, index) => (
+                    <option key={index} value={slot.start}>
+                      {new Date(slot.start).toLocaleString()}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Eye, EyeOff } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Registeruser.css';
+import Navbar from '../../components/Navbar/Navbar';
 
 const Registeruser = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -42,6 +43,7 @@ const Registeruser = () => {
 
   return (
     <div className='register-page'>
+      <Navbar/>
       <div className="register-container">
         <div className="register-header">
           <h2>Register your account</h2>

@@ -3,6 +3,7 @@ import './DescriptionCounsellor.css'
 import { assets } from '../../assets/assets'
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
+import Navbar from '../../components/Navbar/Navbar';
 
 const DescriptionCounsellor = () => {
   const { id } = useParams();
@@ -20,7 +21,10 @@ const DescriptionCounsellor = () => {
   return <p>Loading...</p>;
 }
   return (
+    <div>
+      <Navbar/>
     <div className="page-container">
+      
       <Link to="/traineelist"><img src={assets.back_icon} alt="" /></Link>
       {/* Profile Card Section */}
       <section className="profile-hero">
@@ -46,9 +50,10 @@ const DescriptionCounsellor = () => {
       </section>
       <div className="button-group">
         <Link to={`/clientform/${counsellor.id}`}><button className="action-btn">Book a session by form</button></Link>
-        <button className="action-btn">Book a session by AI</button>
+        <Link to={`/chatbot/${counsellor.id}`}><button className="action-btn">Book a session by AI</button></Link>
       </div>
     </div>
+  </div>
   )
 }
 
