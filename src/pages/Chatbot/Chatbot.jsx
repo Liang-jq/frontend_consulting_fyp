@@ -18,7 +18,7 @@ const Chatbot = () => {
     const [bookingStep, setBookingStep] = useState('idle');
 
     console.log("Counsellor ID:", counsellor_id);
-    const ai = new GoogleGenAI({apiKey: "AIzaSyDLBp8OvV0XB9hAUAqIQ52a1HslLSWhQXY"})
+    const ai = new GoogleGenAI({apiKey: ""})
     const createId = () =>`${Date.now()}-${Math.random().toString(36).slice(2)}`
 
     const createMessage = (text, sender = 'bot') => ({
